@@ -10,7 +10,7 @@ You can create webhooks via either the `Webhook<T>` constructor or a method on t
 
 ```csharp
 var member = factory.Member("myusername");
-var webhook = factory.Webook<Member>(member, "http://myurl.com/inbox/");
+var webhook = factory.Webhook(member, "http://myurl.com/inbox/");
 ```
 
 The URI which is passed in must be set up to receive POST messages.  Within the controller, extract the message body as a string, and pass it to the `TrelloProcessor.ProcessNotification()` static method.  Manatee.Trello will find the entity (if it's been downloaded already) and update it.
